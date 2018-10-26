@@ -20,6 +20,111 @@ function call() {
 }
 call();
 
+//s.8 Beräkna summa
+function sumOfTwo(x, y) {
+    return x + y;
+}
+console.log(`Summan av två tal: ${sumOfTwo(21, 4)}`);
+
+function sumOfThree(x, y, z) {
+    return x + y + z;
+}
+console.log(`Summa av tre tal: ${sumOfThree(147, 4, 9)}`);
+
+//s.9 Beräkna medelvärde
+function averageOfTwo(x, y) {
+    return (x + y) / 2;
+}
+console.log(`Medelvärdet av denna två tal är ${averageOfTwo(46, 78)}`);
+
+function averageOfThree(x, y, z) {
+    return (x + y + z) / 3;
+}
+console.log(`Medelvärdet av denna tre tal är ${averageOfThree(2, 11, 29)}`);
+
+//s.10
+    // function f1(x,y) {
+    //     return x * y;
+    // }
+    // function f2(a,b,c) {
+    //     return f1(a,b) + c;
+    // }
+    // let result = f2(2,3,4);
+    // console.log(result);
+console.log('result = 10');
+
+//s.11
+// function f1(x, y) {
+//     return x * y;
+// }
+// function f2(a, b) {
+//     return a / b;
+// }
+// let result = f2(f1(3, 2), 2);
+console.log('result = 3');
+
+//s.12
+// function ValueFunction(value) {
+//     this.value = value;
+//     this.getValue = function() {
+//         return this.value;
+//     }
+//     this.setValue = function(a) {
+//         this.value = a;
+//     }
+// }
+// let valueTest = new ValueFunction(10);
+// valueTest.setValue(20);
+// console.log(valueTest.getValue());
+console.log('Resultat: 20');
+
+//s.13
+// function ValueFunction(value) {
+//     this.value = value;
+//     this.getValue = function() {
+//         return this.value;
+//     }
+//     this.addValue = function(a) {
+//          this.value += a;
+//     }
+// }
+// let valueTest = new ValueFunction(10);
+// valueTest.addValue(20);
+// console.log(valueTest.getValue());
+console.log('Resultat: 30');
+
+//s.14 Prompt()
+const name = prompt('Skriv ett namn');
+
+function greeting() {
+    return `Hello ${name}`;
+}
+
+document.write(greeting());
+
+//s.15 Antal timmer
+const antal = parseInt(prompt('Ange ett antal minuter som är större än 60'));
+//if(antal < 60) alert('Försök igen med nummer större än 60');
+
+const timmar = Math.floor(antal / 60);
+const minuter = antal % 60;
+
+alert(`Antal timmar och minuter är: ${timmar} timmar och ${minuter} minuter.`);
+
+//s.16 Mobilräkning
+const antalMinuter = prompt('Antal minuter du ringer per månad: ');
+const kostnadPerMin = prompt('Kostaden per minut:');
+
+alert(`Du får betala i totalt ${antalMinuter * kostnadPerMin} kronor i månad.`);
+
+//s.17 Moms
+const prisExcl = parseInt(prompt('Ange varans pris excl. moms'));
+const momsatsen = parseInt(prompt('Ange varans momsatsen i procent')) / 100;
+const prisInkl = prisExcl + (prisExcl * momsatsen);
+const momsen = prisExcl * momsatsen;
+
+alert('Din vara kostar ' + prisInkl + ' kronor.' + '\n' + 'Momsen av varan är ' + momsen + ' kronor.');
+
 //s.19 Swap algoritm
 function swap(x, y) {
     let tmp = x;
@@ -112,6 +217,19 @@ function captalize(str) {
 
 console.log(captalize('hej och välkommen!'));
 
+//s.29 max()
+function maxArray(arr) {
+    return Math.max(...arr);    //spread operator
+}
+console.log('Max:' + '' + maxArray([15, 29, 178]));
+
+//s.30 max() & min()
+function maxMin(arr) {
+    const res = [Math.max(...arr), Math.min(...arr)];
+    return `Max: ${res[0]}. Min: ${res[1]}`
+}
+console.log(maxMin([18, 325, 7]));
+
 //s.31 Avståndsformeln
 function distance(x1, x2, y1, y2) {
     const d = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1) , 2));
@@ -138,6 +256,14 @@ function getTime() {
     console.log(time);
 }
 getTime();
+
+//s.35 Datum och arrayer ex Dag den DD månad YYYY
+const dArr = ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'];
+const mArr = ['Januari', 'Februari', 'Mars', 'April', 'Mai', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'];
+const today = dArr[now.getDay()];
+const currentMon = mArr[now.getMonth()];
+
+console.log(`${today} den ${now.getDate()} ${currentMon} ${now.getFullYear()}`);
 
 //s.36 Digital klocka
 //se https://codepen.io/blenderWang/pen/JmaYVK
