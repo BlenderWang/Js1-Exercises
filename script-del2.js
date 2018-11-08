@@ -87,29 +87,29 @@
 //     i++;
 // }
 
-// //s.14
-// const activities = ['jogging', 'JavaScript', 'Övningar', 'Lektion', 'HTML', 'CSS', 'Målning'];
-// const today = new Date().getDay(); //[0,1,2,3,4,5,6]
-// const days = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'];
+//s.14
+const activities = ['jogging', 'JavaScript', 'Övningar', 'Lektion', 'HTML', 'CSS', 'Målning'];
+const today = new Date().getDay(); //[0,1,2,3,4,5,6]
+const days = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag'];
 
-// switch(today) {
-//     case 0: console.log(`Det är ${days[today]} idag och du ska göra ${activities[0]} idag!`);
-//     break;
-//     case 1: console.log(`Det är ${days[today]} idag och du ska göra ${activities[1]} idag!`);
-//     break;
-//     case 2: console.log(`Det är ${days[today]} idag och du ska göra ${activities[2]} idag!`);
-//     break;
-//     case 3: console.log(`Det är ${days[today]} idag och du ska göra ${activities[3]} idag!`);
-//     break;
-//     case 4: console.log(`Det är ${days[today]} idag och du ska göra ${activities[4]} idag!`);
-//     break;
-//     case 5: console.log(`Det är ${days[today]} idag och du ska göra ${activities[5]} idag!`);
-//     break;
-//     case 6: console.log(`Det är ${days[today]} idag och du ska göra ${activities[6]} idag!`);
-//     break;
-//     default:
-//     console.log('alert alert!');
-// }
+switch(today) {
+    case 0: console.log(`Det är ${days[today]} idag och du ska göra ${activities[0]} idag!`);
+    break;
+    case 1: console.log(`Det är ${days[today]} idag och du ska göra ${activities[1]} idag!`);
+    break;
+    case 2: console.log(`Det är ${days[today]} idag och du ska göra ${activities[2]} idag!`);
+    break;
+    case 3: console.log(`Det är ${days[today]} idag och du ska göra ${activities[3]} idag!`);
+    break;
+    case 4: console.log(`Det är ${days[today]} idag och du ska göra ${activities[4]} idag!`);
+    break;
+    case 5: console.log(`Det är ${days[today]} idag och du ska göra ${activities[5]} idag!`);
+    break;
+    case 6: console.log(`Det är ${days[today]} idag och du ska göra ${activities[6]} idag!`);
+    break;
+    default:
+    console.log('alert alert!');
+}
 
 // //s.15
 // const num = parseInt(prompt('Ange ett nummer mellan 1 och 10'));
@@ -134,16 +134,16 @@
 //     console.log(x + '\t' + (x / 2).toFixed(2) + '\t' + (x / 3).toFixed(2));
 // }
 
-// //s.18
-// const favFoods = ['Ärtsoppa', 'Röd Curry', 'Spaghetti Bolognese', 'Pizza Hawaii', 'BBQ', 'Dumplings', 'Tempura'];
-// const meal = Math.floor(Math.random() * favFoods.length);
-// const day = Math.floor(Math.random() * 6) + 1;
+//s.18
+const favFoods = ['Ärtsoppa', 'Röd Curry', 'Spaghetti Bolognese', 'Pizza Hawaii', 'BBQ', 'Dumplings', 'Tempura'];
+const meal = Math.floor(Math.random() * favFoods.length);
+const day = Math.floor(Math.random() * 6) + 1;
 
-// if(day == 5) {
-//     document.write('Du ska äta ute idag!');
-// }else{
-//     document.write(`Dagens maträtt är ${favFoods[meal]}.`);
-// }
+if(day == 5) {
+    document.write('Du ska äta ute idag!');
+}else{
+    document.write(`Dagens maträtt är ${favFoods[meal]}.`);
+}
 
 // //s.19
 // let lön = 500;
@@ -161,18 +161,17 @@
 
 // //s.20
 // const arr = [];
-
 // while(true) {
-//     let num = parseInt(prompt('Ange ett nummer'));
+//     let tal = prompt('Ange ett nummer');
 
-//     // if(num === '' || num === ' ') break;
-//     if(isNaN(num) === true) break;
-
-//     arr.push(num);
+//     if(tal === '' || tal === ' ' || tal === null) break;
+//     if(isNaN(tal)) break;
+//     //always run the consitions first or it'll return null/0
+//     arr.push(tal);
 // }
+// const max = Math.max(...arr);
+// const min = Math.min(...arr);
 
-// const min = Math.min.apply(null, arr);
-// const max = Math.max.apply(null, arr);
 // console.log('Min: ' + min + '\n' + 'Max: ' + max);
 
 // //s.21
@@ -208,15 +207,15 @@
 // }
 // console.log(arraySum(4));
 
-// //s.24
-// function arraySum2D(arr2d) {
-//     const result = arr2d.reduce( (accumulator, currentValue) => accumulator.concat(currentValue), [])   //to flatten the 2d array
-//         .reduce( (accumulator, currentValue) => accumulator + currentValue, 0); //to sum up all values
+//s.24
+function arraySum2D(arr2d) {
+    const result = arr2d.reduce( (accumulator, currentValue) => accumulator.concat(currentValue), [])   //to flatten the 2d array
+        .reduce( (accumulator, currentValue) => accumulator + currentValue, 0); //to sum up all values
 
-//     return result;
-// }
+    return result;
+}
 
-// console.log(arraySum2D([[1,2,3],[4,5,6]]));
+console.log(arraySum2D([[1,2,3],[4,5,6]]));
 
 // //s.25
 // const n = parseInt(prompt('Skriv ett heltal: '));
